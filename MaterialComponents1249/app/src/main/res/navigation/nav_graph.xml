@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/videosFragment">
+
+    <fragment
+        android:id="@+id/videosFragment"
+        android:name="com.example.test.mc.VideoListFragment"
+        android:label="fragment_videos"
+        tools:layout="@layout/fragment_video_list" >
+        <action
+            android:id="@+id/to_videoFragment"
+            app:destination="@id/videoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.example.test.mc.VideoDetailsFragment"
+        android:label="fragment_video"
+        tools:layout="@layout/fragment_video_details" >
+        <argument
+            android:name="video"
+            app:argType="com.example.test.mc.model.Video" />
+        <argument
+            android:name="keepPlayingVideo"
+            app:argType="boolean" />
+    </fragment>
+</navigation>
